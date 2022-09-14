@@ -1,4 +1,4 @@
-To add links follow the existing format below. The `[text](url)` [markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for displaying text as links. This is the original [Awesome list](https://github.com/qinwf/awesome-R#2020) that we are copying from and making a lab-specific awesome list!
+To add links, follow the existing format below. The `[text](url)` format is [markdown syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) for displaying text as links. This is the original [Awesome list](https://github.com/qinwf/awesome-R#2020) that we are copying from and making a lab-specific awesome list!
 
 # Links and resources
 
