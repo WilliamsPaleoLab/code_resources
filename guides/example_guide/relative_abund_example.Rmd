@@ -1,0 +1,51 @@
+---
+title: "Relative Abundance"
+author: "Quinn Asena"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Summary
+
+This document is an example of a guide.
+
+Below is an example species matrix using random numbers as a demonstration.
+
+```{r}
+
+# Generate some random numers. Not real spp distributions!
+spp_matrix <- matrix(rpois(2000, 1), ncol = 20, nrow = 100)
+
+# Check the current row sums of the first six rows
+rowSums(spp_matrix)[1:6]
+
+```
+
+We can simply divide the matrix by the sum of each row and multiply by 100 (or not if you want to sum to 1):
+
+```{r}
+spp_matrix_perc <- (spp_matrix / rowSums(spp_matrix))*100
+
+# Check the current row sums again
+rowSums(spp_matrix_perc)[1:6]
+
+```
+
+Care must be taken to make sure you are using only the species count columns and not any additional values such as age. You may need to subset your data. Usually I like to to it in BASE rather than tidyverse:
+
+```{r}
+
+# spp matrix with time column
+spp_matrix_t <- cbind(1:nrow(spp_matrix), spp_matrix)
+
+# Here I'm running the same calculation on all the columns except for the newly added time column
+spp_matrix_t[ , 2:ncol(spp_matrix_t)] <- (spp_matrix_t[ , 2:ncol(spp_matrix_t)] / rowSums(spp_matrix_t[ , 2:ncol(spp_matrix_t)]))*100
+
+# Check results:
+rowSums(spp_matrix_t)
+
+```
+
+The end...
+
+P.S. Please make real guides more descriptive! This is a basic example :)
